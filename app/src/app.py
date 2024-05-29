@@ -13,12 +13,12 @@ OUTPUT_FILES_PATH = os.path.join(CURRENT_EXECT_PATH,"app","src", "output")
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
-text = Utilities.read_text_file(os.path.join(TEST_FILES_PATH, "text", "eng_sample.txt"))
+text = Utilities.read_text_file(os.path.join(TEST_FILES_PATH, "text", "tag_sample.txt"))
 
 
 # Text to speech to a file
 # ['en', 'es', 'fr', 'de', 'it', 'pt', 'pl', 'tr', 'ru', 'nl', 'cs', 'ar', 'zh-cn', 'hu', 'ko', 'ja', 'hi']
-Models_Examples.xtts_from_sample_audio_and_text_to_output_audio(device,
+""" Models_Examples.xtts_from_sample_audio_and_text_to_output_audio(device,
                                                                 text, 
                                                                 os.path.join(TEST_FILES_PATH, "donquixote_my_voice_spa.wav"),
                                                                 "en",
@@ -41,4 +41,11 @@ Models_Examples.vctk_from_audio_to_audio_output(device,
 Models_Examples.tacotron2_GER_from_text_to_output_audio(device,
                                                     "Ich bin eine Testnachricht.",
                                                     os.path.join(OUTPUT_FILES_PATH, "output_GER.wav")
-                                                    )
+                                                    ) """
+
+Models_Examples.xtts_from_sample_audio_and_text_to_output_audio(device,
+                                                                text, 
+                                                                os.path.join(TEST_FILES_PATH, "tag_sample.m4a"),
+                                                                "es",
+                                                                os.path.join(OUTPUT_FILES_PATH, "output_tag.wav")
+                                                                )

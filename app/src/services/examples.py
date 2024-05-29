@@ -41,3 +41,11 @@ class Models_Examples:
             text,
             speaker_wav=audio_sample_path,
             file_path=output_path )     
+
+    @staticmethod
+    # Probar con tortoise
+    def xtts_from_text_to_output_audio(device, text, lang, output_path):
+        tts = TTS("tts_models/multilingual/multi-dataset/xtts_v2").to(device)
+        tts.tts_to_file(text=text, language=lang, 
+                        file_path=output_path, 
+                        split_sentences=True)
